@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Album from '../Album';
+import './style.scss';
 
 AlbumList.propTypes = {
     albumList: PropTypes.array,
 };
 
-AlbumList.default = {
+AlbumList.defaultProps = {
     albumList: [],
 };
 
@@ -14,12 +15,12 @@ function AlbumList(props) {
     const {albumList} = props;
     return (
         <div>
-            <ul>
+            <ul className='album-list'>
                 {
                     albumList.length > 0 && albumList.map(item => (
-                        <div className=''>
+                        <li>
                             <Album album={item}/>
-                        </div>
+                        </li>
                     ))
                 }
             </ul>
